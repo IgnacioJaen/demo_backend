@@ -25,22 +25,26 @@ import java.util.List;
 public class HelloWorld {
 
     Student student= new Student();
+    String a= "Hola mundo";
+    String b= "Dos Hola mundo";
+    int n=20;
+
     @Autowired
     JdbcTemplate jdbcTemplate;
 
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.TEXT_PLAIN_VALUE)
     public String hello() {
-        return "HOLA MUNDO";
+        return a;
     }
 
     @RequestMapping(value = "/dos", method = RequestMethod.GET, produces = MediaType.TEXT_PLAIN_VALUE)
     public String helloTwo() {
-        return "DOS HOLA";
+        return b;
     }
 
     @RequestMapping(value = "/student", method = RequestMethod.GET, produces = MediaType.TEXT_PLAIN_VALUE)
     public String findStudent() {
-        return student.findById(20).toString();
+        return student.findById(n).toString();
     }
 
 
