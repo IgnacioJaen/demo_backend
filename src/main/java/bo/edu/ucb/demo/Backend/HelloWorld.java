@@ -28,6 +28,7 @@ public class HelloWorld {
     String a= "Hola mundo";
     String b= "Dos Hola mundo";
     int n=20;
+    String m=student.findById(n).toString();
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -44,7 +45,7 @@ public class HelloWorld {
 
     @RequestMapping(value = "/student", method = RequestMethod.GET, produces = MediaType.TEXT_PLAIN_VALUE)
     public String findStudent() {
-        return student.findById(n).toString();
+        return m;
     }
 
 
